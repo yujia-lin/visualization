@@ -32,21 +32,21 @@ export default {
   methods: {
     show: function () {
       console.log(11)
-    //   axios.get('https://api.douban.com/v2/book/search',{
-    //     params:{
-    //       q : "javascript", 
-    //       count : 1
-    //     }
-    //   })
-    //   .then(function(response){
-    //     // 成功
-    //     console.log(response);
-    //   })
-    //   .catch(function(err){
-    //     // 失败
+      axios.get('/api/v2/book/search',{
+        params:{
+          q : "javascript", 
+          count : 1
+        }
+      })
+      .then(function(response){
+        // 成功
+        console.log(response);
+      })
+      .catch(function(err){
+        // 失败
 
-    //     console.log(err);
-    //   });
+        console.log(err);
+      });
 
     }
   }
