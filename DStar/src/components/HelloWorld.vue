@@ -1,6 +1,9 @@
 <template>
   <div class="hello">
     <h1>{{ num }}</h1>
+    <div style="width:220px">
+    {{datas}}
+    </div>
     <h2 @click="show()">Essential Links</h2>
     <mt-tabbar>
       <mt-tab-item id="外卖">
@@ -27,10 +30,12 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App',
       num: this.$store.state.login,
+      datas:null,
     }
   },
   methods: {
     show: function () {
+    var _this=this;
       console.log(11)
       axios.get('/api/v2/book/search',{
         params:{
@@ -41,10 +46,10 @@ export default {
       .then(function(response){
         // 成功
         console.log(response);
+        _this.datas=response.data.books[0].catalog
       })
       .catch(function(err){
         // 失败
-
         console.log(err);
       });
 
