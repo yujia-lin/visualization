@@ -23,7 +23,16 @@
 
 <script>
 import axios from 'axios'
-
+import qs from 'qs';
+var instance = axios.create({
+	url: '/api',
+  baseURL: 'https://api.douban.com/',
+  withCredentials: false,
+  timeout: 1000,
+  headers:{
+    'Content-Type':'application/x-www-form-urlencoded'
+	}
+});
 export default {
   name: 'HelloWorld',
   data () {
@@ -37,22 +46,18 @@ export default {
     show: function () {
     var _this=this;
       console.log(11)
-      axios.get('/api/v2/book/search',{
-        params:{
+      var params={
           q : "javascript", 
           count : 1
         }
-      })
-      .then(function(response){
-        // 成功
-        console.log(response);
-        _this.datas=response.data.books[0].catalog
-      })
-      .catch(function(err){
-        // 失败
-        console.log(err);
-      });
-
+      axios.post('/api/v2/book/search', qs.stringify(params))
+			.then(response => {
+			  console.log(response);
+			})
+			.catch(err => {
+			  console.log(err);
+			});
+      
     }
   }
 }
