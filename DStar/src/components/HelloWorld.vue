@@ -24,15 +24,7 @@
 <script>
 import axios from 'axios'
 import qs from 'qs';
-var instance = axios.create({
-	url: '/api',
-  baseURL: 'https://api.douban.com/',
-  withCredentials: false,
-  timeout: 1000,
-  headers:{
-    'Content-Type':'application/x-www-form-urlencoded'
-	}
-});
+
 export default {
   name: 'HelloWorld',
   data () {
@@ -50,14 +42,14 @@ export default {
           q : "javascript", 
           count : 1
         }
-      axios.post('/api/v2/book/search', qs.stringify(params))
-			.then(response => {
-			  console.log(response);
+			this.$jsonp('https://api.douban.com/v2/book/search', params ).then(json => {
+			　　console.log(json)
+				
+			　　// 返回数据 json， 返回的数据就是json格式
+			}).catch(err => {
+			　　console.log(err)
 			})
-			.catch(err => {
-			  console.log(err);
-			});
-      
+
     }
   }
 }
