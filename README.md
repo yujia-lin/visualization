@@ -1,2 +1,2 @@
 # vueDStar 
-vue-cli+router+axios+mint-ui
+vue-cli+router+axios+mint-ui+jsonp
