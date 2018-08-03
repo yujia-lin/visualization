@@ -5,12 +5,13 @@ import App from './App'
 import router from './router'
 import store from './store'
 import MintUI from 'mint-ui'
+import axios from './request'
 import VueJsonp from 'vue-jsonp'
 import 'mint-ui/lib/style.css'
 
 Vue.use(MintUI)
 Vue.use(VueJsonp)
-
+Vue.prototype.$ajax=axios;
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
