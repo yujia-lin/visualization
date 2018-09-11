@@ -12,7 +12,7 @@
     <mt-tabbar>
       <mt-tab-item id="外卖">
       <!-- <img slot="icon" src="../assets/100x100.png"> -->
-        外卖
+        测试
       </mt-tab-item>
       <mt-tab-item id="订单">
         订单
