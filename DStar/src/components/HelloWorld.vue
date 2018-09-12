@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+  	<coma></coma>
     <h1>{{ num }}</h1>
     <div style="width:220px">
     {{datas}}
@@ -28,9 +29,12 @@
 <script>
 import axios from 'axios'
 import qs from 'qs';
+import coma from './a.vue';
 
 export default {
-  name: 'HelloWorld',
+  components:{
+  	coma
+  },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',

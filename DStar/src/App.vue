@@ -1,13 +1,19 @@
 <template>
   <div id="app">
-    <img src="./static/logo.png">
-    <router-link to="/helloworld">hello</router-link>
     <router-view/>
+  	
+    <router-link to="/helloworld">hello</router-link>
+
+    <comb></comb>
   </div>
 </template>
 
 <script>
+import comb from "./components/b"
 export default {
+	components:{
+		comb
+	},
   name: 'App'
 }
 </script>
