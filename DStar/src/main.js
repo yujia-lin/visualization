@@ -9,6 +9,7 @@ import axios from './request'
 import VueJsonp from 'vue-jsonp'
 import 'mint-ui/lib/style.css'
 import echarts from 'echarts'
+import 'lib-flexible/flexible.js'
 
 Vue.use(MintUI)
 Vue.use(VueJsonp)

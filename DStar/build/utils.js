@@ -30,17 +30,24 @@ exports.cssLoaders = function (options) {
   }
 
   // generate loader string to be used with extract text plugin
-  function generateLoaders (loader, loaderOptions) {
-    const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader]
 
+const px2remLoader = {
+    loader: 'px2rem-loader',
+    options: {
+    remUnit: 37.5
+    }
+}
+ 
+function generateLoaders (loader, loaderOptions) {
+    const loaders = [cssLoader, px2remLoader]
     if (loader) {
-      loaders.push({
+        loaders.push({
         loader: loader + '-loader',
         options: Object.assign({}, loaderOptions, {
-          sourceMap: options.sourceMap
+        sourceMap: options.sourceMap
         })
-      })
-    }
+    })
+}
 
     // Extract CSS when that option is specified
     // (which is the case during production build)

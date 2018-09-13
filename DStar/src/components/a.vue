@@ -1,5 +1,5 @@
 <template>
-<div id="myChart" :style="{width: '300px', height: '300px'}"></div>
+<div id="myChart"></div>
 
 </template>
 
@@ -53,5 +53,9 @@ li {
 }
 a {
   color: #42b983;
+}
+#myChart{
+	width: 300px;
+	height: 300px;
 }
 </style>
