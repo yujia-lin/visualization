@@ -1,20 +1,19 @@
 <template>
   <div id="app">
   	<heads></heads>
-  	<alltarget></alltarget>
     <router-view/>
-    <router-link to="./">检测</router-link>
+    <router-link to="./testing">检测</router-link>
     <router-link to="./trend">趋势</router-link>
   </div>
 </template>
 
 <script>
 import heads from "./components/heads"
-import alltarget from "./components/alltarget"
+
 export default {
 	components:{
 		heads,
-		alltarget,
+
 	},
   name: 'App'
 }

@@ -1,18 +1,19 @@
 <template>
-	<div id="">
-		<div>返回</div>
-		<div>标题</div>
-		<div>
-			<div>下拉</div>
-			<div>刷新</div>
-		</div>
+	<div id="testing">
+		<alltarget></alltarget>
+		<overproof></overproof>
 	</div>
 </template>
 
 <script>
-
+import alltarget from "./alltarget"
+import overproof from "./overproof"
+//import alltarget from "./components/alltarget"
 export default {
-
+	components:{
+		alltarget,
+		overproof
+	},
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
