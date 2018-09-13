@@ -8,10 +8,12 @@ import MintUI from 'mint-ui'
 import axios from './request'
 import VueJsonp from 'vue-jsonp'
 import 'mint-ui/lib/style.css'
+import echarts from 'echarts'
 
 Vue.use(MintUI)
 Vue.use(VueJsonp)
 Vue.prototype.$ajax=axios;
+Vue.prototype.$echarts = echarts ;
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
