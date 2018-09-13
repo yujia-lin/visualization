@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import trend from '@/components/trend'
 
 Vue.use(Router)
 
@@ -8,8 +8,8 @@ export default new Router({
 	mode: 'history',
 	routes: [
 	    {
-	      path: '/HelloWorld',
-	      component: HelloWorld
+	      path: '/trend',
+	      component: trend
 	    }
 	]
 })

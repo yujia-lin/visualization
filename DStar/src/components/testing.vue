@@ -1,11 +1,18 @@
 <template>
-	<div id="head">{{msg}}</div>
+	<div id="">
+		<div>返回</div>
+		<div>标题</div>
+		<div>
+			<div>下拉</div>
+			<div>刷新</div>
+		</div>
+	</div>
 </template>
 
 <script>
 
 export default {
-  name: 'head',
+
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
@@ -16,18 +23,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>
