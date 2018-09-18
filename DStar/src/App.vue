@@ -1,9 +1,24 @@
 <template>
   <div id="app">
   	<heads></heads>
-    <router-view/>
-    <router-link to="./testing">检测</router-link>
-    <router-link to="./trend">趋势</router-link>
+  	<div class="main_box">
+    	<router-view/>
+    </div>
+    <div class="nav_box f_flex">
+    	<router-link to="./testing" class="z_flex navAct">
+    		<div>
+    			<h5 class="nav_icon nav_icon1"></h5>
+    			<p>检测</p>
+    		</div>
+    	</router-link>
+    	<router-link to="./trend"  class="z_flex">
+    		<div>
+    			<h5 class="nav_icon nav_icon2"></h5>
+    			<p>趋势</p>
+    		</div>
+    	</router-link>
+    </div>
+
   </div>
 </template>
 
@@ -21,7 +36,7 @@ export default {
 
 <style>
 *{padding:0;margin:0;font-family:'Microsoft Yahei';color:#666;}
-html{overflow-x: hidden;}
+html{overflow-x: hidden;background: #f2f6fa;}
 li {list-style:none;}
 img {border:none;vertical-align:bottom}
 a{text-decoration:none;}
@@ -42,6 +57,25 @@ input:focus,textarea:focus{outline:none;}/*input:focus焦点  改变线条 outli
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background: #f2f6fa;
+  padding-bottom: 54px;
+}
+.f_flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.z_flex {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+.box_sizing{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.main_box{
+	padding: 0 11px;
 }
 h1, h2 {
   font-weight: normal;
@@ -52,9 +86,39 @@ ul {
 }
 li {
   display: inline-block;
-  margin: 0 10px;
 }
-a {
-  color: #42b983;
+.nav_box{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 54px;
+	background: #fff;
+}
+.nav_box a{
+		font-size: 12px;
+}
+.nav_icon{
+	height: 22px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 22px;
+	padding-top: 8px;
+	padding-bottom: 3px;
+}
+.nav_box p{
+	line-height: 1;
+}
+.nav_icon1{
+	background-image: url(static/nav_icon1.png);
+}
+.nav_icon2{
+	background-image: url(static/nav_icon2.png);
+}
+.navAct .nav_icon1{
+	background-image: url(static/nav_icon1_act.png);
+}
+.navAct .nav_icon2{
+	background-image: url(static/nav_icon2_act.png);
 }
 </style>

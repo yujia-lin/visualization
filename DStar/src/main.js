@@ -10,6 +10,9 @@ import VueJsonp from 'vue-jsonp'
 import 'mint-ui/lib/style.css'
 import echarts from 'echarts'
 import 'lib-flexible/flexible.js'
+import './static/fontstyle.css'
+import './static/my-mint.css'
+
 
 Vue.use(MintUI)
 Vue.use(VueJsonp)
