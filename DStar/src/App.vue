@@ -1,40 +1,55 @@
 <template>
   <div id="app">
   	<heads></heads>
-  	<div class="main_box">
-    	<router-view/>
-    </div>
-    <div class="nav_box f_flex">
-    	<router-link to="./testing" class="z_flex navAct">
-    		<div>
-    			<h5 class="nav_icon nav_icon1"></h5>
-    			<p>检测</p>
-    		</div>
-    	</router-link>
-    	<router-link to="./trend"  class="z_flex">
-    		<div>
-    			<h5 class="nav_icon nav_icon2"></h5>
-    			<p>趋势</p>
-    		</div>
-    	</router-link>
-    </div>
-
+  	<inputc types="email" v-model="emailVal"></inputc>
+  	<inputc types="phone" v-model="phoneVal"></inputc>
+  	<inputc types="verifyCode" v-model="verifyCodeVal"></inputc>
+  	<inputc types="select" v-model="selectVal" :optionlist="olist"></inputc>
+  	<inputc types="range" v-model="rangeVal" minRange="0" maxRange="300" :colorlist="clist"></inputc>
+  	
   </div>
 </template>
 
 <script>
 import heads from "./components/heads"
+import inputc from "./commit/inputc"
 
 export default {
 	components:{
 		heads,
-
+		inputc,
 	},
-  name: 'App'
+  name: 'App',
+  data(){
+  	return {
+  		emailVal:"",
+  		phoneVal:"",
+  		verifyCodeVal:"",
+  		selectVal:"",
+  		rangeVal:0,
+  		clist:{
+  			startC:"#fc7c61",
+  			endC:"#fc7c61",
+  			bgC:"#ffcfad",
+  		},
+  		olist:[
+  			{
+  				val:"0",
+  				name:"男",
+  			},
+  			{
+  				val:"1",
+  				name:"女",
+  			}
+  		]
+  	}
+  }
 }
 </script>
 
 <style>
+input[type=text]::-ms-clear{display: none;}
+input[type=password]::-ms-reveal{display:none;}
 *{padding:0;margin:0;font-family:'Microsoft Yahei';color:#666;}
 html{overflow-x: hidden;background: #f2f6fa;}
 li {list-style:none;}
@@ -49,76 +64,20 @@ textarea{-webkit-appearance:none;resize:none;}
 .tac{text-align: center;}
 .tar{text-align: right;}
 .tal{text-align: left;}
-
-input:focus,textarea:focus{outline:none;}/*input:focus焦点  改变线条 outline 背景 background*/
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  background: #f2f6fa;
-  padding-bottom: 54px;
+select::-ms-expand{ display: none; }
+option::-ms-expand{ display: none; }
+option{
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari 和 Chrome */
+    appearance:none;
 }
-.f_flex {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-}
-.z_flex {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  flex: 1;
-}
-.box_sizing{
-	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-}
-.main_box{
-	padding: 0 11px;
-}
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-}
-.nav_box{
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 54px;
-	background: #fff;
-}
-.nav_box a{
-		font-size: 12px;
-}
-.nav_icon{
-	height: 22px;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 22px;
-	padding-top: 8px;
-	padding-bottom: 3px;
-}
-.nav_box p{
-	line-height: 1;
-}
-.nav_icon1{
-	background-image: url(static/nav_icon1.png);
-}
-.nav_icon2{
-	background-image: url(static/nav_icon2.png);
-}
-.navAct .nav_icon1{
-	background-image: url(static/nav_icon1_act.png);
-}
-.navAct .nav_icon2{
-	background-image: url(static/nav_icon2_act.png);
-}
+/*option:hover{
+    color:#fff;
+    background-color:#1E90FF;
+}*/
+table {border-collapse: collapse;border-spacing: 0;}
+input:focus,textarea:focus,select:focus,option:focus,option{outline:none;}/*input:focus焦点  改变线条 outline 背景 background*/
+.f_flex{display: -webkit-box;display: -webkit-flex;display: flex;}
+.z_flex {-webkit-box-flex: 1;-webkit-flex: 1;flex: 1;}
+.box_sizing{box-sizing: border-box;-webkit-box-sizing: border-box;}
 </style>
