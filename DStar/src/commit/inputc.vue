@@ -220,7 +220,8 @@ export default {
 }
 .commitInput_box{
 	position: relative;
-}.commitLabel .close_i{
+}
+.commitLabel .close_i{
 	color: #888;
 	font-family: mintui!important;
     font-size: 14px;
