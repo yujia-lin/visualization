@@ -1,48 +1,26 @@
 <template>
   <div id="app">
   	<heads></heads>
-  	<inputc types="email" v-model="emailVal"></inputc>
-  	<inputc types="phone" v-model="phoneVal"></inputc>
-  	<inputc types="verifyCode" v-model="verifyCodeVal"></inputc>
-  	<inputc types="select" v-model="selectVal" :optionlist="olist"></inputc>
-  	<inputc types="range" v-model="rangeVal" minRange="0" maxRange="300" :colorlist="clist"></inputc>
-  	
+  	<formdemo></formdemo>
   </div>
 </template>
-
 <script>
 import heads from "./components/heads"
-import inputc from "./commit/inputc"
+import formdemo from "./components/formdemo"
 
 export default {
 	components:{
 		heads,
-		inputc,
+		formdemo
 	},
   name: 'App',
   data(){
   	return {
-  		emailVal:"",
-  		phoneVal:"",
-  		verifyCodeVal:"",
-  		selectVal:"",
-  		rangeVal:0,
-  		clist:{
-  			startC:"#fc7c61",
-  			endC:"#fc7c61",
-  			bgC:"#ffcfad",
-  		},
-  		olist:[
-  			{
-  				val:"0",
-  				name:"男",
-  			},
-  			{
-  				val:"1",
-  				name:"女",
-  			}
-  		]
+  		
   	}
+  },
+  methods:{
+  
   }
 }
 </script>
