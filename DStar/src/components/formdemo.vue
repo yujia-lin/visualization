@@ -13,7 +13,7 @@
 	</div>
 </template>
 <!--
-	types 为对应的表单功能 phone 校验手机号码  email 校验邮箱号码 verifyCode 校验验证码 select 下拉菜单  range滑块 default默认表单
+	types 为对应的表单功能 phone 校验手机号码  email 校验邮箱号码 verifyCode 校验验证码 select 下拉菜单  range滑块 default默认表单 password 密码框 passwordRepeat 密码框+确认密码 radio单选组 checkbox 复选组
 	styles 修改样式
 	v-model 对应 value值 
 	@flag 输入框类型 接收输入值 是否符合规则

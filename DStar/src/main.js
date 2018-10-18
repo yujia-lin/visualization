@@ -13,8 +13,8 @@ import 'lib-flexible/flexible.js'
 import './static/fontstyle.css'
 import './static/my-mint.css'
 
-
 Vue.use(MintUI)
+
 Vue.use(VueJsonp)
 Vue.prototype.$ajax=axios;
 Vue.prototype.$echarts = echarts ;

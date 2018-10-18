@@ -1,13 +1,16 @@
 <template>
 	<div id="public">
-		
+		<imgload></imgload>
 	</div>
 </template>
 
 <script>
-
+import imgload from "../commit/pic_synthesis"
 export default {
 	name: 'public',
+	components:{
+		imgload,
+	},
 	data () {
 	    return {
 	      msg: '',

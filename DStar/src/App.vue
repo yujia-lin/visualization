@@ -2,25 +2,37 @@
   <div id="app">
   	<heads></heads>
   	<formdemo></formdemo>
+  	<qrcode size="300" urls="http://www.baidu.com"></qrcode>
+
+  	<!--<publicUi></publicUi>-->
   </div>
 </template>
 <script>
 import heads from "./components/heads"
+import qrcode from "./commit/qrcode"
 import formdemo from "./components/formdemo"
-
+import publicUi from "./components/public_ui"
+ 
 export default {
 	components:{
 		heads,
-		formdemo
+		formdemo,
+		qrcode,
+		publicUi
 	},
   name: 'App',
   data(){
   	return {
-  		
+			qrcodeUrl:"http://www.baidu.com"
   	}
   },
+	mounted () {
+	console.log(this.$route.params)
+	console.log(window.location.href)
+	},
   methods:{
-  
+
+
   }
 }
 </script>
