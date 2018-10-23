@@ -1,37 +1,34 @@
 <template>
   <div id="app">
-  	<heads></heads>
-  	<formdemo></formdemo>
-  	<qrcode size="300" urls="http://www.baidu.com"></qrcode>
-
-  	<!--<publicUi></publicUi>-->
+  	<operation></operation>
+  	<canvasBox></canvasBox>
+  	<pagelist></pagelist>
+  	<toolbar></toolbar>
   </div>
 </template>
 <script>
-import heads from "./components/heads"
-import qrcode from "./commit/qrcode"
-import formdemo from "./components/formdemo"
-import publicUi from "./components/public_ui"
+import operation from "./block/operation"
+import canvasBox from "./block/canvas"
+import pagelist from "./block/pagelist"
+import toolbar from "./block/toolbar"
  
 export default {
 	components:{
-		heads,
-		formdemo,
-		qrcode,
-		publicUi
+		canvasBox,
+		operation,
+		pagelist,
+		toolbar
 	},
   name: 'App',
   data(){
   	return {
-			qrcodeUrl:"http://www.baidu.com"
+
   	}
   },
 	mounted () {
-	console.log(this.$route.params)
-	console.log(window.location.href)
+		
 	},
   methods:{
-
 
   }
 }
@@ -41,7 +38,7 @@ export default {
 input[type=text]::-ms-clear{display: none;}
 input[type=password]::-ms-reveal{display:none;}
 *{padding:0;margin:0;font-family:'Microsoft Yahei';color:#666;}
-html{overflow-x: hidden;background: #f2f6fa;}
+html{overflow-x: hidden;background: #282828;}
 li {list-style:none;}
 img {border:none;vertical-align:bottom}
 a{text-decoration:none;}
@@ -61,10 +58,6 @@ option{
     -webkit-appearance:none; /* Safari 和 Chrome */
     appearance:none;
 }
-/*option:hover{
-    color:#fff;
-    background-color:#1E90FF;
-}*/
 table {border-collapse: collapse;border-spacing: 0;}
 input:focus,textarea:focus,select:focus,option:focus,option{outline:none;}/*input:focus焦点  改变线条 outline 背景 background*/
 .f_flex{display: -webkit-box;display: -webkit-flex;display: flex;}
