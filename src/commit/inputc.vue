@@ -29,7 +29,7 @@
 				</select>
 			</label>
 			<label for="" class="commitLabel commitLabelRange" v-else-if="types=='range'">
-				<input ref="processRange" class="progress" type="range" v-model="currentValue" :max ="maxRange" :min ="minRange" step="1" @input = "changeProcess" style="width: 100%;margin-bottom:3px;" :style="{background: '-webkit-linear-gradient(left, '+colorlist.startC+' 0%,'+colorlist.endC+' '+currentRange+'%,'+colorlist.bgC+' '+(currentRange+0.00001)+'%,'+colorlist.bgC+'  100% )'}">
+				<input ref="processRange" class="progress" type="range" v-model="currentValue" :max ="maxRange" :min ="minRange" step="1" style="width: 100%;margin-bottom:3px;" :style="{background: '-webkit-linear-gradient(left, '+colorlist.startC+' 0%,'+colorlist.endC+' '+currentRange+'%,'+colorlist.bgC+' '+(currentRange+0.00001)+'%,'+colorlist.bgC+'  100% )'}">
 			</label>
 			<label for="" class="commitLabel" v-else-if="types=='default'">
 				<div class="commitInput_box">
@@ -89,7 +89,6 @@ export default {
 	props:['value',"types","styles","optionlist","maxRange","minRange","colorlist","flag","ptext","vcType","dType","rclist","rcType"],
 	data () {
 	    return {
-	    	processPoint:this.value,
 	    	radiol:this.rclist,
 	    	checkboxl:this.rclist,
 	    	passwordRepeatObj:{
@@ -141,7 +140,7 @@ export default {
 			}
 		},
 		currentRange(){
-			return ((this.processPoint-this.minRange)/parseFloat(this.maxRange-this.minRange))*100;
+			return ((this.currentValue-this.minRange)/parseFloat(this.maxRange-this.minRange))*100;
 		}
 	},
 	methods:{
@@ -369,9 +368,6 @@ export default {
             }
             this.$emit('flag', obj);
 		},
-		changeProcess() {
-            this.processPoint = this.$refs.processRange.value;
-        },
 		close_input(num){
 			//清除内容
 
@@ -443,7 +439,7 @@ export default {
 }
 .commitLabelRange{
 	overflow: auto;
-	height: 17px;
+	height: 16px;
 	padding: 10px 0;
 }
 .commitInput_box{
@@ -499,7 +495,7 @@ input[type=range] {/*input外壳样式*/
     -webkit-appearance: none;
     border-radius: 10px;
     height: 10px;
-
+	cursor: pointer;
 }
 input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -509,14 +505,13 @@ input[type=range]:focus {
 }
 input[type=range]::-webkit-slider-thumb {/*滑块*/
     -webkit-appearance: none;
-    height: 25px;
-    width: 25px;
-    margin-top: -4px; /*使滑块超出轨道部分的偏移量相等*/
+    height: 16px;
+    width: 16px;
+    margin-top: -2px; /*使滑块超出轨道部分的偏移量相等*/
     background: #ffffff; 
     border-radius: 50%; /*外观设置为圆形*/
     border: solid 0.125em rgba(205, 224, 230, 0.5); /*设置边框*/
     box-shadow: 0 .125em .125em #3b4547; /*添加底部阴影*/
-
  }
 .radioDiv{
 	width: 15px;

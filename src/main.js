@@ -12,7 +12,10 @@ import echarts from 'echarts'
 import 'lib-flexible/flexible.js'
 import './static/fontstyle.css'
 import './static/my-mint.css'
+import vcolorpicker from 'vcolorpicker'
 
+
+Vue.use(vcolorpicker)
 Vue.use(MintUI)
 
 Vue.use(VueJsonp)

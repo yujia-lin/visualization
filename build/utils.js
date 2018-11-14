@@ -39,7 +39,7 @@ const px2remLoader = {
 }
  
 function generateLoaders (loader, loaderOptions) {
-    const loaders = [cssLoader, px2remLoader]
+    const loaders = [cssLoader]
     if (loader) {
         loaders.push({
         loader: loader + '-loader',
